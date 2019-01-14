@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var phoneList = ["0972540825","0865555555","0327777888","0966333888","0981555666","0963111888","0987111888","0863000999","0931811888"];
+    document.write(phoneList);
+    document.write("<br/>");
+    function checkViettelphone(array){
+        var count =0;
+        var regex =/^03[2-9]{1}[0-9]{7}|09[6-8]{1}[0-9]{7}|086[0-9]{7}$/;
+        var vtList = [];
+        for(i=0;i<array.length;i++){
+            if (regex.test(array[i])) {
+                vtList.push(array[i]);
+                count++;
+                document.write(array[i]+', ');
+            }
+        }
+        document.write("<br/>");
+        document.write('Có tất cả '+count+' số điện thoại viettel.')
+    }
+    checkViettelphone(phoneList);
+
+</script>
+</body>
+</html>
